@@ -52,6 +52,4 @@ jobs:
         script: |
           cd /home/tp1/Yassine_Dlimi
           docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
-          docker stop container-dlimi || true
-          docker rm container-dlimi || true
           docker run -d --name container-dlimi -p 2323:2323 ${{ secrets.DOCKER_USERNAME }}/github-workflow
