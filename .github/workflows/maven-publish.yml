@@ -50,9 +50,8 @@ jobs:
         username: root
         password: ${{ secrets.SERVER_PASSWORD }}
         script: |
-          cd ..
           cd /home/tp1/Yassine_Dlimi
           docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
           docker stop container-dlimi || true
           docker rm container-dlimi || true
-          docker run -d --name container-dlimi -p 2323:2323 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow
+          docker run -d --name container-dlimi -p 2323:2323 ${{ secrets.DOCKER_USERNAME }}/github-workflow
