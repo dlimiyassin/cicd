@@ -51,4 +51,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/abdelkarimtesttp1
           docker stop container-yassin || true
           docker rm container-yassin || true
-          docker run -d --name container-abdel -p 6767:6767 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/abdelkarimtesttp1
+          docker run -d --name container-abdel -p 6767:6767 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/testcicd
