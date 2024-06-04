@@ -49,7 +49,7 @@ jobs:
         script: |
           cd ..
           cd /home/tp1/Yassine_Dlimi
-          docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
+          docker pull dlimiyassin/github-workflow
           docker stop container-yassin || true
           docker rm container-yassin || true
-          docker run -d --name container-yassin -p 7667:7667 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workfl
+          docker run -d --name container-yassin -p 7667:7667 -v /home/tp1/Yassine_Dlimi:/app dlimiyassin/github-workflow
