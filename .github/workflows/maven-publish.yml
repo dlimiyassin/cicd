@@ -43,16 +43,16 @@ jobs:
     needs: build
 
     steps:
-    - name: SSH to Server and Pull Docker Image
-      uses: appleboy/ssh-action@v0.1.5
-      with:
-        host: 156.67.81.207
-        username: root
-        password: ${{ secrets.SERVER_PASSWORD }}
-        script: |
-          cd ..
-          cd /home/tp1/Yassine_Dlimi
-          docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
-          docker stop container-yassin || true
-          docker rm container-yassin || true
-          docker run -d --name container-yassin -p 2312:2312 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow
+      - name: SSH to Server and Pull Docker Image
+        uses: appleboy/ssh-action@v0.1.5
+        with:
+          host: 156.67.81.207
+          username: root
+          password: ${{ secrets.SERVER_PASSWORD }}
+          script: |
+            cd ..
+            cd /home/tp1/Yassine_Dlimi
+            docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
+            docker stop container-dlimi || true
+            docker rm container-dlimi || true
+            docker run -d --name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow
