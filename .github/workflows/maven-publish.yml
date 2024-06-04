@@ -1,6 +1,5 @@
 # This workflow will build a package using Maven and then publish it to GitHub packages when a release is created
 # For more information see: https://github.com/actions/setup-java/blob/main/docs/advanced-usage.md#apache-maven-with-a-settings-path
-
 name: cicd flow
 
 on:
@@ -50,9 +49,8 @@ jobs:
           username: root
           password: ${{ secrets.SERVER_PASSWORD }}
           script: |
-            cd ..
             cd /home/tp1/Yassine_Dlimi
-            docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
+            docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow:latest
             docker stop container-dlimi || true
             docker rm container-dlimi || true
-            docker run -d --name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow
+            docker run -d --name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow:latest name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow
