@@ -52,4 +52,4 @@ jobs:
           docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow
           docker stop container-yassin || true
           docker rm container-yassin || true
-          docker run -d --name container-yassin -p 2312:2312 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workfl
+          docker run -d --name container-yassin -p 7667:7667 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workfl
