@@ -53,4 +53,4 @@ jobs:
             docker pull ${{ secrets.DOCKER_USERNAME }}/github-workflow:latest
             docker stop container-dlimi || true
             docker rm container-dlimi || true
-            docker run -d --name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow:latest name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow
+            docker run -d --name container-dlimi -p 8027:8027 -v /home/tp1/Yassine_Dlimi:/app ${{ secrets.DOCKER_USERNAME }}/github-workflow:latest
